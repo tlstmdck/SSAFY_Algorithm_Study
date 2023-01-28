@@ -1,4 +1,4 @@
-package algorithm.acmi.study.week1;
+package algorithm.acmi.study.week1.tlstmdck;
 
 import java.io.BufferedReader;
 import java.io.IOException;
