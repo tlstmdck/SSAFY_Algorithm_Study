@@ -1,4 +1,4 @@
-package algorithm.acmi.study.week4;
+package algorithm.acmi.study.week4.tlstmdck;
 
 import java.util.Scanner;
 
