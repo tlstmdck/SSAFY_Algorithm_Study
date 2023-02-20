@@ -35,13 +35,9 @@ public class Main {
 			}
 			for (int j = strArr.length -1 ; j > firstIdx; j--) {
 				if(strArr[firstIdx] < strArr[j]) {
-					// 0 ~ firstIdx -1
-					// firstIdx ~ idx -1
-					// idx ~
 					char tmp = strArr[firstIdx];
 					strArr[firstIdx] = strArr[j];
 					strArr[j] = tmp;
-//					System.out.println(Arrays.toString(strArr));
 					arr1 = Arrays.copyOfRange(strArr, 0, firstIdx+1);
 					arr2 = Arrays.copyOfRange(strArr, firstIdx+1, strArr.length);
 					Arrays.sort(arr2);
