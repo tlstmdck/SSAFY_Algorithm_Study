@@ -9,7 +9,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.StringTokenizer;
-
+/*
+ * 기본적으로 0중에 3개 조합으로 꺼낸후 벽으로 변경
+ * 그 후 바이러스 퍼트린 후 다시 복구하면서 반복
+ */
 public class acmi14502_연구소 {
     static int N,M,after, before, max;
     static int[][] map;
@@ -40,42 +43,31 @@ public class acmi14502_연구소 {
             st = new StringTokenizer(br.readLine());
             for(int j=0; j<M; j++){
                 map[i][j] = Integer.parseInt(st.nextToken());
+                // 바이러스 에서 bfs진행해야 하므로 start지점 저장
                 if(map[i][j] == 2){
                     virus.add(new Pair(i, j));
-                }
-                else if(map[i][j] == 0){
-                    before++;
                 }
             }
         }
         comb(0,0,0);
-        // for(int i=0; i<N; i++){
-        //     for(int j=0; j<M; j++){
-        //         if(map[i][j] == 0){
-        //             comb(i,j,0,0);
-        //         }
-        //     }
-        // }
         System.out.println(max);
     }
-
+    //arr을 통해 map이 0인 곳 3개 조합
     public static void comb(int idx ,int start, int size){
         if(size == 3){
-            // for(int[] list : arr){
-            //     System.out.print(Arrays.toString(list));
-            // }
-            // System.out.println();
+            //해당 좌표 1로 변경
             for(int[] list : arr){
                 map[list[0]][list[1]] = 1;
             }
             go_check();
-            
+            // check했으므로 다시 복구
             for(int[] list : arr){
                 map[list[0]][list[1]] = 0;
             }
            
             return;
         }
+        // 편의성을 위해 i는 모든 좌표의 범위를 나타내도록함
         for(int i=start; i<N*M; i++ ){
             int x = i/M;
             int y = i%M;
@@ -87,11 +79,16 @@ public class acmi14502_연구소 {
         }
     }
     public static void go_check(){
+        // bfs시작 전에 시작점 qu 저장 및 visited 배열 초기화
         for(Pair start : virus){
             qu.add(start);
         }
         visited = new boolean[N][M];
+        
+        // bfs 진행
         bfs();
+        
+        // bfs수행이 끝난 후 전염되지 않은 구역 계산
         for(int i=0; i<N; i++){
             for(int j=0; j<M; j++){
                 if(map[i][j] == 0 && visited[i][j] == false){
@@ -99,11 +96,14 @@ public class acmi14502_연구소 {
                 }
             }
         }
+
+        // 최대값 계산
         max = Math.max(max, after) ;
         after = 0;
     }
+
+    // bfs 진행
     public static void bfs(){
-        
         while(!qu.isEmpty()){
             Pair cur = qu.poll();
             visited[cur.x][cur.y] = true;
