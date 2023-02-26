@@ -80,7 +80,7 @@ public class acmi20055_컨베이어벨트로봇 {
                 robot.add(0);
                 map[0][0]--;
             }
-
+            싱숭생숭원
             // 4번 동작
             int sum = 0;
             for(int[] list : map){
