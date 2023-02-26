@@ -32,7 +32,7 @@ wbo1026 - 우수인
 <br></br>
 
 ## 📍 Progress Record
-|  | 박민영 | 이가인 | 임서희 | 전채연 |
+|  | 신승원 | 우승빈 | 임규돈 | 박재현 | 배수빈 | 유혜빈 | 이진서 | 
 | :---: | :---: | :---: | :---: | :---: |
 | GitHub | [MinYeongPark](https://github.com/MinYeongPark) | [LGAIN](https://github.com/LGAIN) | [kinglim00](https://github.com/kinglim00) | [b1urrrr](https://github.com/b1urrrr) |
 | Language | <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white"> | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"> | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"> | <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white"> |
